@@ -6,6 +6,7 @@ import {Navigation} from 'react-native-navigation';
 import App from './App';
 import Home from './src/Home';
 import Seetings from './src/Settings';
+import traslate from './src/utils/i18n';
 
 // Register screens
 Navigation.registerComponent('navigation.WelcomeScreen', () => App);
@@ -20,7 +21,7 @@ Navigation.events().registerAppLaunchedListener(() => {
           component: {
             name: 'navigation.settings',
             passProps: {
-              text: 'This is a left side menu screen',
+              text: traslate.left_side_menu,
             },
           },
         },
@@ -31,11 +32,11 @@ Navigation.events().registerAppLaunchedListener(() => {
                 component: {
                   name: 'navigation.home',
                   passProps: {
-                    text: 'This is tab 1',
+                    text: traslate.tab1,
                   },
                   options: {
                     bottomTab: {
-                      text: 'Tab 1',
+                      text: traslate.tab1,
                       icon: require('./img/layouts.png'),
                     },
                   },
@@ -45,11 +46,11 @@ Navigation.events().registerAppLaunchedListener(() => {
                 component: {
                   name: 'navigation.WelcomeScreen',
                   passProps: {
-                    text: 'This is tab 2',
+                    text: traslate.tab2,
                   },
                   options: {
                     bottomTab: {
-                      text: 'Tab 2',
+                      text: traslate.tab2,
                       icon: require('./img/options.png'),
                     },
                   },
